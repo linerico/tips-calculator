@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <img src="./images/logo.svg" alt="logo" />
+      </div>
+      <div class="card">
+        <div class="tool">
+          <div class="form-control">
+            <div class="form-label">Bill</div>
+            <div class="form-input">
+              <input
+                type="number"
+                id="bill-input"
+                class="bill-input"
+                placeholder="0"
+              />
+              <img src="./images/icon-dollar.svg" />
+            </div>
+          </div>
+          <div class="form-control">
+            <div class="form-label">Select Tip %</div>
+            <div class="form-tips">
+              <div class="tip tip-percentage">5%</div>
+              <div class="tip tip-percentage">10%</div>
+              <div class="tip tip-percentage">15%</div>
+              <div class="tip tip-percentage">25%</div>
+              <div class="tip tip-percentage">50%</div>
+              <div class="tip tip-custom">
+                <input
+                  type="number"
+                  class="tip-input"
+                  id="tip-input"
+                  placeholder="Custom"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-control">
+            <div class="form-label">Number of People</div>
+            <div class="form-input">
+              <input
+                type="number"
+                id="people-input"
+                class="people-input"
+                placeholder="0"
+              />
+              <img src="./images/icon-person.svg" />
+            </div>
+          </div>
+        </div>
+        <div class="result">RESULT</div>
+      </div>
+    </div>
+
+    <!-- Bill
+
+  Select Tip %
+  5%
+  10%
+  15%
+  25%
+  50%
+  Custom
+
+  Number of People
+
+  Tip Amount
+  / person
+
+  Total
+  / person
+
+  Reset -->
+  </body>
+</html>

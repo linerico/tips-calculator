@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;1,700&family=Space+Mono:ital,wght@0,700;1,700&display=swap");
+
+:root {
+  --string-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+}
+
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+  border: none;
+  outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+body {
+  background-color: var(--light-grayish-cyan);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  gap: 50px;
+}
+
+.logo {
+}
+
+.card {
+  background-color: var(--white);
+  padding: 25px;
+  display: flex;
+  gap: 25px;
+  border-radius: 15px;
+}
+
+.tool {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 300px;
+}
+
+.form-control {
+}
+
+.form-label {
+  color: var(--dark-grayish-cyan);
+}
+
+.form-input {
+  margin-top: 5px;
+  position: relative;
+}
+
+.form-input > input {
+  width: 100%;
+  height: 48px;
+  border-radius: 10px;
+  font-size: 24px;
+  text-align: end;
+  background-color: var(--very-light-grayish-cyan);
+  padding: 0 20px;
+  color: var(--very-dark-cyan);
+}
+
+.form-input img {
+  position: absolute;
+  left: 10px;
+  top: 14px;
+  height: 40%;
+}
+
+.form-tips {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.form-tips .tip {
+  color: var(--white);
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 5px;
+  /* grid-column: 1 / 1; */
+}
+
+.form-tips .tip-custom {
+  background-color: var(--very-light-grayish-cyan);
+  padding: 0;
+}
+
+.form-tips .tip-custom input {
+  width: 50px;
+  height: 100%;
+  border: 1px solid black;
+  margin: 0;
+  padding: 0;
+}
+
+.form-tips .tip-percentage {
+  background-color: var(--very-dark-cyan);
+}
+
+.result {
+  background-color: var(--very-dark-cyan);
+  border-radius: 10px;
+  width: 200px;
+}
