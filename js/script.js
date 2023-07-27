@@ -26,8 +26,8 @@ const resetResult = () => {
 };
 
 const Calculate = () => {
-  if (!billInput.value) return resetResult();
-  if (!peopleInput.value) return resetResult();
+  if (!billInput.value || billInput.value == 0) return resetResult();
+  if (!peopleInput.value || peopleInput.value == 0) return resetResult();
 
   const customTipActive = document.querySelector(".tip-custom.active");
   let tipPercentage = parseInt(
@@ -39,8 +39,7 @@ const Calculate = () => {
   if (customTipActive) {
     tipPercentage = parseFloat(customTipInput.value);
   }
-
-  if (!tipPercentage) return resetResult();
+  if (!tipPercentage && tipPercentage !== 0) return resetResult();
 
   const tip = parseFloat(billInput.value) * (tipPercentage / 100);
   const person =
