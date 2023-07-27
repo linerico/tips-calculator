@@ -25,6 +25,13 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
+input {
+  border: 2px solid transparent;
+}
+
+input:focus {
+  border: 2px solid var(--string-cyan);
+}
 
 body {
   background-color: var(--light-grayish-cyan);
@@ -40,6 +47,7 @@ body {
 }
 
 .logo {
+  margin-top: 50px;
 }
 
 .card {
@@ -54,18 +62,22 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 300px;
+  max-width: 300px;
 }
 
 .form-control {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
 }
 
 .form-label {
   color: var(--dark-grayish-cyan);
+  margin-right: 5px;
 }
 
 .form-input {
-  margin-top: 5px;
   position: relative;
 }
 
@@ -80,18 +92,22 @@ body {
   color: var(--very-dark-cyan);
 }
 
+.form-input > input::placeholder {
+  opacity: 30%;
+  color: var(--very-dark-cyan);
+}
+
 .form-input img {
   position: absolute;
-  left: 10px;
+  left: 18px;
   top: 14px;
-  height: 40%;
+  height: 35%;
 }
 
 .form-tips {
   display: grid;
-  grid-template-columns: auto auto auto;
-  column-gap: 10px;
-  row-gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
 }
 
 .form-tips .tip {
@@ -99,28 +115,151 @@ body {
   text-align: center;
   padding: 5px 0;
   border-radius: 5px;
-  /* grid-column: 1 / 1; */
 }
 
 .form-tips .tip-custom {
   background-color: var(--very-light-grayish-cyan);
+  display: inline;
   padding: 0;
 }
 
 .form-tips .tip-custom input {
-  width: 50px;
+  width: 100%;
   height: 100%;
-  border: 1px solid black;
-  margin: 0;
-  padding: 0;
+  text-align: center;
+  background-color: transparent;
+  font-size: 18px;
+  border-radius: 5px;
 }
 
 .form-tips .tip-percentage {
   background-color: var(--very-dark-cyan);
 }
 
+.form-tips .tip-percentage:hover {
+  cursor: pointer;
+}
+
+.tip-percentage.active {
+  background-color: var(--string-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.tip-custom.active input {
+  border: 2px solid var(--string-cyan);
+}
+
+.form-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.form-error {
+  margin-left: auto;
+  color: red;
+}
+
+.hide {
+  display: none;
+}
+
+.input-error {
+  border: 2px solid red;
+}
+.input-error:focus {
+  border: 2px solid red;
+}
+
 .result {
   background-color: var(--very-dark-cyan);
   border-radius: 10px;
-  width: 200px;
+  max-width: 300px;
+  min-width: 300px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.result-item {
+  display: flex;
+  align-items: center;
+}
+
+.item-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-label {
+  color: var(--white);
+  font-size: 12px;
+}
+
+.item-label .label-light {
+  font-size: 11px;
+  opacity: 70%;
+}
+
+.item-amount {
+  margin-left: auto;
+  color: var(--string-cyan);
+  font-size: 36px;
+}
+
+.result-action {
+  margin-top: auto;
+}
+
+.result-action button {
+  width: 100%;
+  padding: 7px;
+  border-radius: 3px;
+  background-color: var(--string-cyan);
+}
+
+.result-action button:disabled {
+  opacity: 3 0%;
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    flex-direction: column;
+    max-width: 100vw;
+    margin: 0 20px 20px 20px;
+  }
+
+  /* .form-tips {
+    grid-template-columns: repeat(2, 1fr);
+  } */
+}
+
+@media only screen and (max-width: 400px) {
+  .card {
+    flex-direction: column;
+    width: 100vw;
+    border-radius: 15px 15px 0 0;
+    margin: 0;
+  }
+
+  .tool {
+    max-width: 100%;
+  }
+
+  .result {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .form-tips {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .item-amount {
+    font-size: 32px;
+  }
+  .form-error {
+    margin: 0;
+  }
 }

@@ -38,12 +38,12 @@
           <div class="form-control">
             <div class="form-label">Select Tip %</div>
             <div class="form-tips">
-              <div class="tip tip-percentage">5%</div>
-              <div class="tip tip-percentage">10%</div>
-              <div class="tip tip-percentage">15%</div>
-              <div class="tip tip-percentage">25%</div>
-              <div class="tip tip-percentage">50%</div>
-              <div class="tip tip-custom">
+              <div class="tip tip-percentage" data-percentage="5">5%</div>
+              <div class="tip tip-percentage" data-percentage="10">10%</div>
+              <div class="tip tip-percentage" data-percentage="15">15%</div>
+              <div class="tip tip-percentage" data-percentage="25">25%</div>
+              <div class="tip tip-percentage" data-percentage="50">50%</div>
+              <div id="tip-custom" class="tip tip-custom">
                 <input
                   type="number"
                   class="tip-input"
@@ -55,7 +55,10 @@
           </div>
 
           <div class="form-control">
-            <div class="form-label">Number of People</div>
+            <div class="form-head">
+              <div class="form-label">Number of People</div>
+              <div class="form-error hide">Can't be zero</div>
+            </div>
             <div class="form-input">
               <input
                 type="number"
@@ -67,28 +70,28 @@
             </div>
           </div>
         </div>
-        <div class="result">RESULT</div>
+        <div class="result">
+          <div class="result-item">
+            <div class="item-label">
+              <span>Tip Amount</span>
+              <span class="label-light">/ person</span>
+            </div>
+            <div id="tip-amount" class="item-amount">$0.00</div>
+          </div>
+          <div class="result-item">
+            <div class="item-label">
+              <span>Total</span>
+              <span class="label-light">/ person</span>
+            </div>
+            <div id="total-amount" class="item-amount">$0.00</div>
+          </div>
+          <div class="result-action">
+            <button id="reset-button">RESET</button>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- Bill
-
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset -->
+    <script src="./js/script.js"></script>
   </body>
 </html>
